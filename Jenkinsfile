@@ -13,7 +13,7 @@ pipeline {
        stage('Build Maven') {
             steps {
                 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/shrutiM22/spring-pipeline-buildtest.git']])                
-                bat 'mvn clean install'
+                sh 'mvn clean install'
             }
         }
         stage('test') {
